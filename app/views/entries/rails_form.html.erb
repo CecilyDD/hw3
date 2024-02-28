@@ -1,0 +1,21 @@
+<%= form_with model: @entry do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :posted_on %>
+    <%= form.date_field :posted_on %>
+  </p>
+  <p>
+    <%= form.label :place_id %>
+    <%= form.collection_select :place_id, Place.all, :id, :name, prompt: true %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
