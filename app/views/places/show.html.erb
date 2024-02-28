@@ -5,14 +5,15 @@
 <ul>
   <% @place.entries.each do |entry| %>
     <li>
-      <strong>Title:</strong> <%= entry.title %><br>
-      <strong>Description:</strong> <%= entry.description %>
+      <strong><%= entry.title %></strong><br>
+      <%= entry.description %><br>
+      <%= entry.posted_on %>
     </li>
   <% end %>
 </ul>
 
 <p>
-  <%= link_to "New Entry", new_entry_path(place_id: @place.id) %>
+  <%= link_to "New Entry", new_place_entry_path(@place) %>
 </p>
 
 <p>
