@@ -1,11 +1,9 @@
-<h1>Places I've been</h1>
+<h1>Places I've Been</h1>
  
 <ul>
-  <% for place in @places %>
+  <% @places.each do |place| %>
     <li>
-      <a href="/places/<%= place["id"] %>">
-        <%= place["name"] %>
-      </a>
+      <%= link_to place.name, place_path(place) %>
     </li>
   <% end %>
 </ul>
